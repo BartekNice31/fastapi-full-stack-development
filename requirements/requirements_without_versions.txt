@@ -40,3 +40,5 @@ toml
 typing-extensions
 urllib3
 uvicorn
+mypy
+httpx2

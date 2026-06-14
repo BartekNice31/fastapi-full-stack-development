@@ -1,8 +1,8 @@
 from pydantic_settings import BaseSettings,SettingsConfigDict
 
 class Settings(BaseSettings):
-    PROJECT_TITLE="Blog🚀"
-    PROJECT_VERSION="0.1.0🚀"
+    PROJECT_TITLE:str=''
+    PROJECT_VERSION:str=''
     model_config = SettingsConfigDict(env_file=".env")
 
 settings=Settings()
