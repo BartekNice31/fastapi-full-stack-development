@@ -1,4 +1,5 @@
 atomicwrites
+alembic
 attrs
 bcrypt
 certifi
@@ -25,6 +26,7 @@ py
 pyasn1
 pycparser
 pydantic
+pydantic_settings
 pyparsing
 pytest
 pytest-cov
@@ -42,3 +44,8 @@ urllib3
 uvicorn
 mypy
 httpx2
+aiohttp
+psycopg2
+pydantic[email]
+bcrypt==4.0.1
+passlib[bcrypt] 

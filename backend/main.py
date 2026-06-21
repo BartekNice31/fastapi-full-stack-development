@@ -2,14 +2,26 @@ from fastapi import FastAPI
 from datetime import datetime
 from users import Users
 from core.config import settings
-
+from db.session import engine
+from db.base import Base
+from db.models import User, Blog
+from apis.base import api_router
 # class Settings:
 #     PROJECT_NAME:str=''
 #     PROJECT_VERSION:str='0.1.0'
 # settings=Settings()
-
-app=FastAPI(title=settings.PROJECT_TITLE
+def include_router(app):
+    app.include_router(api_router)
+def create_tables():
+    Base.metadata.create_all(bind=engine)
+def start_application():
+    app=FastAPI(title=settings.PROJECT_TITLE
         ,version=settings.PROJECT_VERSION) 
+    include_router(app)
+    #create_tables()
+    return app
+
+app=start_application()
 
 blogs1=[
     {
